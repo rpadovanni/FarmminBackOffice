@@ -1,12 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-app-layout',
   templateUrl: './app-layout.component.html',
-  styleUrls: ['./app-layout.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./app-layout.component.scss']
 })
 export class AppLayoutComponent implements OnInit {
 
@@ -16,8 +15,6 @@ export class AppLayoutComponent implements OnInit {
   public auxBody: string = '';
 
   constructor(titleService: Title, private _router: Router, activatedRoute: ActivatedRoute) {
-    console.log("AQUI");
-
     // Sets page title
     _router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
